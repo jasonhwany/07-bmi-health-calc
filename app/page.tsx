@@ -1,5 +1,19 @@
 "use client";
 import AdUnit from "@/components/AdUnit"
+
+import Script from "next/script"
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "BMI 계산기 (BMI Calculator)",
+  url: "https://bmi.moneystom7.com",
+  description: "키와 몸무게로 체질량지수를 계산하는 무료 건강 계산기",
+  applicationCategory: "UtilityApplication",
+  operatingSystem: "Any",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
+  inLanguage: ["ko", "en"],
+}
 import { useState } from "react";
 
 const CATS = [
