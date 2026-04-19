@@ -10,13 +10,11 @@ export const metadata: Metadata = {
     default: "BMI 계산기 — MoneyStom7",
     template: "%s | MoneyStom7",
   },
-  description: "키·몸무게로 체질량지수와 건강 상태를 확인. 무료 BMI 계산기. Free BMI calculator. Calculate your Body Mass Index with height and weight. Check your health status.",
-  keywords: ["BMI 계산기", "BMI Calculator", "무료", "온라인", "계산기", "BMI calculator", "body mass index", "health calculator", "weight calculator"],
-  authors: [{ name: "MoneyStom7" }],
+  description: "키·몸무게로 체질량지수와 건강 상태를 확인. Free BMI calculator.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "BMI 계산기 — MoneyStom7",
-    description: "키·몸무게로 체질량지수와 건강 상태를 확인. 무료 BMI 계산기.",
+    description: "키·몸무게로 체질량지수와 건강 상태를 확인. Free BMI calculator.",
     url: BASE_URL,
     siteName: "MoneyStom7",
     locale: "ko_KR",
@@ -25,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "BMI 계산기 — MoneyStom7",
-    description: "키·몸무게로 체질량지수와 건강 상태를 확인. 무료 BMI 계산기.",
+    description: "키·몸무게로 체질량지수와 건강 상태를 확인. Free BMI calculator.",
   },
   robots: {
     index: true,
@@ -39,6 +37,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ko">
       <body>
         {children}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-GN51TN6PS4"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-GN51TN6PS4');
+          `}
+        </Script>
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8414331859152952"
